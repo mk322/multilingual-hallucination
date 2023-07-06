@@ -1,0 +1,69 @@
+Desglose la siguiente oración en datos independientes: Hizo su debut como actor en la película The Moon is the Sun's Dream (1992), y continuó apareciendo en papeles pequeños y secundarios a lo largo de la década de 1990.
+- Hizo su debut como actor en la película.
+- Hizo su debut como actor en The Moon is the Sun's Dream.
+- La luna es el sueño del sol es una película.
+- The Moon is the Sun's Dream fue lanzado en 1992.
+- Después de su debut como actor, apareció en papeles pequeños y secundarios.
+- Después de su debut como actor, apareció en papeles pequeños y secundarios a lo largo de la década de 1990.
+
+Desglose la siguiente oración en hechos independientes: también es un productor e ingeniero exitoso, que ha trabajado con una amplia variedad de artistas, incluidos Willie Nelson, Tim McGraw y Taylor Swift.
+- El es exitoso.
+- Es productor.
+- Él es un ingeniero.
+- Ha trabajado con una gran variedad de artistas.
+- Willie Nelson es un artista.
+- Ha trabajado con Willie Nelson.
+- Tim McGraw es un artista.
+- Ha trabajado con Tim McGraw.
+- Taylor Swift es una artista.
+- Ha trabajado con Taylor Swift.
+
+Desglose la siguiente oración en hechos independientes: En 1963, Collins se convirtió en uno del tercer grupo de astronautas seleccionados por la NASA y se desempeñó como piloto del módulo de comando de respaldo para la misión Gemini 7.
+- Collins se convirtió en astronauta.
+- Collins se convirtió en uno del tercer grupo de astronautas.
+- Collins se convirtió en uno del tercer grupo de astronautas seleccionados.
+- Collins se convirtió en uno del tercer grupo de astronautas seleccionados por la NASA.
+- Collins se convirtió en uno del tercer grupo de astronautas seleccionados por la NASA en 1963.
+- Se desempeñó como Piloto del Módulo de Comando.
+- Se desempeñó como piloto del módulo de comando de respaldo.
+- Se desempeñó como Piloto del Módulo de Comando para la misión Gemini 7.
+
+Desglose la siguiente oración en hechos independientes: Además de sus papeles actorales, Bateman ha escrito y dirigido dos cortometrajes y actualmente está desarrollando su debut cinematográfico.
+- Bateman tiene papeles de actuación.
+- Bateman ha escrito dos cortometrajes.
+- Bateman ha dirigido dos cortometrajes.
+- Bateman ha escrito y dirigido dos cortometrajes.
+- Bateman se encuentra actualmente en desarrollo en su debut cinematográfico.
+
+Desglose la siguiente oración en hechos independientes: Michael Collins (nacido el 31 de octubre de 1930) es un astronauta estadounidense retirado y piloto de pruebas que fue piloto del módulo de comando para la misión Apolo 11 en 1969.
+- Michael Collins nació el 31 de octubre de 1930.
+- Michael Collins está retirado.
+- Michael Collins es estadounidense.
+- Michael Collins fue astronauta.
+- Michael Collins fue piloto de pruebas.
+- Michael Collins era el piloto del módulo de mando.
+- Michael Collins fue el piloto del módulo de comando de la misión Apolo 11.
+- Michael Collins fue el piloto del módulo de comando de la misión Apolo 11 en 1969.
+
+Desglose la siguiente oración en hechos independientes: fue un compositor, director de orquesta y director musical estadounidense.
+- Era estadounidense.
+- Era un compositor.
+- Era director de orquesta.
+- Era director musical.
+
+Desglose la siguiente oración en hechos independientes: Actualmente protagoniza la serie de comedia romántica, Love and Destiny, que se estrenó en 2019.
+- Actualmente protagoniza Love and Destiny.
+- Love and Destiny es una serie de comedia romántica.
+- Amor y destino se estrenó en 2019.
+
+Desglose la siguiente oración en hechos independientes: Durante su carrera profesional, McCoy jugó para los Broncos, los San Diego Chargers, los Minnesota Vikings y los Jacksonville Jaguars.
+- McCoy jugó para los Broncos.
+- McCoy jugó para los Broncos durante su carrera profesional.
+- McCoy jugó para los Cargadores de San Diego.
+- McCoy jugó para los San Diego Chargers durante su carrera profesional.
+- McCoy jugó para los Minnesota Vikings.
+- McCoy jugó para los Minnesota Vikings durante su carrera profesional.
+- McCoy jugó para los Jacksonville Jaguars.
+- McCoy jugó para los Jacksonville Jaguars durante su carrera profesional.
+
+Desglose la siguiente oración en hechos independientes: 

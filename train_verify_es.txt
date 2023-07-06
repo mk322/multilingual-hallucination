@@ -1,0 +1,23 @@
+Declaración: Albert Einstein ganó un Premio Nobel de Física por su teoría de la relatividad general.
+Contexto: Nunca se otorgó un Premio Nobel por la teoría de la relatividad. El giro final en esta historia es que Einstein no asistió a la ceremonia de entrega del premio. A pesar de que le informaron que estaba a punto de recibir el premio, optó por continuar con una gira de conferencias por Japón.
+Pregunta: ¿El contexto respalda la declaración? Primero debe identificar la evidencia del contexto, explicar cómo esta evidencia se relaciona con la declaración y luego usar este razonamiento para llegar a una conclusión.
+Respuesta: Según el contexto, "Nunca se otorgó un Premio Nobel por la teoría de la relatividad". Esto significa que ningún individuo, incluido Albert Einstein, recibió un Premio Nobel específicamente por la teoría de la relatividad general. Por lo tanto, la declaración es falsa.
+
+Declaración: El cuerpo humano contiene más células bacterianas que células humanas.
+Contexto: Durante mucho tiempo se creyó que la cantidad de células bacterianas en el cuerpo humano superaba en gran medida a las células humanas. Sin embargo, estudios recientes sugieren una proporción de aproximadamente 1:1, lo que significa que la cantidad de células humanas y bacterianas es aproximadamente igual.
+Pregunta: ¿El contexto respalda la declaración? Primero debe identificar la evidencia del contexto, explicar cómo esta evidencia se relaciona con la declaración y luego usar este razonamiento para llegar a una conclusión.
+Respuesta: Según el contexto, estudios recientes indican una proporción de aproximadamente 1:1 entre células humanas y bacterianas, lo que contradice la declaración original que afirma que las células bacterianas superan en gran número a las células humanas. Por lo tanto, la declaración es falsa o desactualizada.
+
+Declaración: Júpiter es el planeta más grande de nuestro sistema solar.
+Contexto: Júpiter es de hecho el planeta más grande de nuestro sistema solar, tiene más del doble de masa que todos los demás planetas juntos.
+Pregunta: ¿El contexto respalda la declaración? Primero debe identificar la evidencia del contexto, explicar cómo esta evidencia se relaciona con la declaración y luego usar este razonamiento para llegar a una conclusión.
+Respuesta: Según el contexto, Júpiter es el planeta más grande de nuestro sistema solar y tiene más del doble de masa que todos los demás planetas juntos. Por lo tanto, la declaración es verdadera.
+
+Declaración: La Gran Muralla China es visible desde la Luna a simple vista.
+Contexto: A pesar de los mitos populares, la Gran Muralla China no es visible desde la Luna sin la ayuda de telescopios u otras herramientas. La afirmación es un mito de larga data, pero tanto los astronautas como los científicos han confirmado que no es posible debido a la distancia y la estrechez de la pared.
+Pregunta: ¿El contexto respalda la declaración? Primero debe identificar la evidencia del contexto, explicar cómo esta evidencia se relaciona con la declaración y luego usar este razonamiento para llegar a una conclusión.
+Respuesta: Según el contexto, la afirmación de que la Gran Muralla China es visible desde la Luna a simple vista es un mito, refutado tanto por astronautas como por científicos. Por lo tanto, la declaración es falsa.
+
+Declaración: <statement_to_be_checked>
+Contexto: <context_to_be_checked>
+Pregunta: ¿El contexto respalda la declaración? Primero debe identificar la evidencia del contexto, explicar cómo esta evidencia se relaciona con la declaración y luego usar este razonamiento para llegar a una conclusión.

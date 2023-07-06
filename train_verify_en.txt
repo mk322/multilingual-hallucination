@@ -1,0 +1,24 @@
+Statement: Albert Einstein won a Nobel Prize in Physics for his theory of general relativity.
+Context: A Nobel prize for relativity was never awarded. The final twist in this story is that Einstein did not attend his prize giving. Despite being informed that he was about to receive the prize, he chose to continue with a lecture tour of Japan.
+Question: Does the context support the statement?
+Answer: Let's think step by step. According to the context, "A Nobel prize for relativity was never awarded." This means that no one, including Albert Einstein, received a Nobel Prize specifically for the theory of general relativity. Thus, given the context, the statement is false.
+
+Statement: The human body contains more bacterial cells than human cells.
+Context: It was long believed that the number of bacterial cells in the human body greatly outnumbered human cells. However, recent studies suggest a ratio of about 1:1, meaning the number of human cells and bacterial cells are roughly equal.
+Question: Does the context support the statement?
+Answer: Let's think step by step. According to the context, while it was once believed that bacterial cells greatly outnumbered human cells, recent studies suggest a ratio of about 1:1, or roughly equal numbers of human and bacterial cells. Therefore, the context does not support the statement, indicating that it is outdated or incorrect.
+
+Statement: Jupiter is the largest planet in our solar system.
+Context: Jupiter is indeed the largest planet in our solar system. It is more than twice as massive as all the other planets combined.
+Question: Does the context support the statement?
+Answer: Let's think step by step. According to the context, Jupiter is the largest planet in our solar system and even adds that it is more than twice as massive as all other planets combined. Therefore, the context supports the statement.
+
+Statement: The Great Wall of China is visible from the Moon with the naked eye.
+Context: Despite popular myths, the Great Wall of China is not visible from the Moon without the aid of telescopes or other tools. The claim is a longstanding myth, but both astronauts and scientists have confirmed that it's not possible due to the distance and the narrowness of the wall.
+Question: Does the context support the statement?
+Answer: Let's think step by step. According to the context, the claim that the Great Wall of China is visible from the Moon with the naked eye is a myth, debunked by astronauts and scientists. Therefore, the context does not support the statement.
+
+Statement: <statement_to_be_checked>
+Context: <context_to_be_checked>
+Question: Does the context support the statement?
+Answer: Let's think step by step. According to the context, 
