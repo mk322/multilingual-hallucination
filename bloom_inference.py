@@ -19,7 +19,7 @@ def get_args():
     parser.add_argument("--greedy", action="store_true")
     parser.add_argument("--top-k", type=int, default=0)
     parser.add_argument("--top-p", type=float, default=0.0)
-    parser.add_argument("--dtype", type=str, help="float16 or int8", choices=["int8", "float16"], default="float16")
+    parser.add_argument("--dtype", type=str, help="float16 or int8", choices=["int8", "float16"], default="int8")
     parser.add_argument('--en_prompt', type=bool, default=False)
     parser.add_argument('--cat', type=str, default="Human")
     return parser.parse_args()
@@ -106,7 +106,6 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 tokenizer.pad_token = tokenizer.eos_token
 tokenizer.pad_token_id = 0
 
-# XXX: can't automatically derive dtype via config's `from_pretrained`
 dtype = torch.bfloat16 if model_name in ["bigscience/bloom", "bigscience/bloomz-mt", "bigscience/bigscience-small-testing"] else torch.float16
 
 # print(get_max_memory_per_gpu_dict())
@@ -190,14 +189,14 @@ for term_link in term_dict:
         term = unquote(term_dict[term_link][lang])
         text_term = term.replace("_", " ")
         if not args.en_prompt:
-            prompt = prompt_langs[lang].format(text_term)
+            prompt = prompt_langs[lang].format(text_term) + f"\n\n{text_term}"
         else:
             prompt = f"Tell me a biography of {text_term} in {lang_names[lang]}."
         prompt_dict[prompt] = (term_link, lang, term) 
         prompt_list.append(prompt)
 
-with open(f"result/{category}_generation_bloomz-mt_{suffix}.txt", "a", buffering=1) as f:
-    for i in range(10697, len(prompt_list), args.batch_size):
+with open(f"result/{category}_generation_bloom_{suffix}.txt", "a", buffering=1) as f:
+    for i in range(4057, len(prompt_list), args.batch_size):
         inputs = prompt_list[i : i+args.batch_size]
     #if not os.path.exists(f'data/scores_{args.model_name}_{args.model_size}'):
         #os.makedirs(f'data/scores_{args.model_name}_{args.model_size}')
@@ -208,4 +207,4 @@ with open(f"result/{category}_generation_bloomz-mt_{suffix}.txt", "a", buffering
                 text = texts[j * 5 + i]
                 term_link, lang, term = prompt_dict[inputs[j]]
 
-                print(f"{term_link}\t{lang}\t{term}\t{i}\t{text}".replace("\n", "\\n"), file=f)
+                print(f"{term_link}\t{lang}\t{term}\t{i}\t{text}".replace("\n", "///n"), file=f)

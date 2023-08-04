@@ -67,14 +67,15 @@ def plot_metric_vs_page_views(page_views, metric_values, languages, target_langu
 
     # Initialize plot
     plt.figure(figsize=(10, 6))
-
+    plt.xscale('log')
+    plt.yscale('log')
     # For each target language, plot the points corresponding to that language
     for lang in target_languages:
         lang_indices = [i for i, x in enumerate(languages) if x == lang]
         lang_page_views = [float(page_views[i]) for i in lang_indices]
         lang_metric_values = [float(metric_values[i]) for i in lang_indices]
-
-        plt.scatter(lang_page_views, lang_metric_values, label=lang)
+        #plt.xlim((0, 0.8e7))
+        plt.scatter(lang_page_views, lang_metric_values, label=lang, s=10)
 
     # Add title and labels
     plt.title('Page Views vs. Metric by Language')
@@ -83,51 +84,52 @@ def plot_metric_vs_page_views(page_views, metric_values, languages, target_langu
     plt.legend()
 
     # Show the plot
-    plt.savefig(f"result/scores/fig/{name}.png")
+    plt.savefig(f"result/scores/fig/{name}_full.png")
 
 
-kk = 0
 df = {}
 with open("wiki_data/Human_by_page_views.json", "r") as f:
     page_view = json.load(f)
 
-path = "result/scores/ROUGE_Human_bloomz-mt_non-en.txt"
+metric_list = ["rouge1", "rouge2", "rougeL", "rougeLsum", "Unigram"]
 
-with open(path, "r") as f:
-    txt = f.read().splitlines()
+for metric in metric_list:
+    path = f"result/scores/{metric}_Human_bloomz-mt_non-en_full.txt"
 
-lang_dict = {}
+    with open(path, "r") as f:
+        txt = f.read().splitlines()
 
-link_list = set()
-for line in txt[1:]:
-    parts = line.split("\t")
-    lang = parts[1]
-    link = parts[0]
-    scores = [i for i in parts[3:]]
-    score = parts[3]
-    link_list.add(link)
-    #score = parts[3]
-    if lang not in lang_dict:
-        lang_dict[lang] = {}
-    if link not in lang_dict[lang]:
-        lang_dict[lang][link] = [[] for _ in range(12)]
-    for i in range(12):
-        score = scores[i]
+    lang_dict = {}
 
-        lang_dict[lang][link][i].append(float(score))
+    link_list = set()
+    for line in txt[1:]:
+        parts = line.split("\t")
+        lang = parts[1]
+        link = parts[0]
+        #scores = [i for i in parts[3:]]
+        score = parts[3]
+        link_list.add(link)
+        #score = parts[3]
+        if lang not in lang_dict:
+            lang_dict[lang] = {}
+        if link not in lang_dict[lang]:
+            lang_dict[lang][link] = []
+        #for i in range(12):
+            #score = scores[i]
+        lang_dict[lang][link].append(float(score))
 
-for kk in range(12):
+    #for kk in range(12):
     pageviews = []
     metrics = []
     langs = []
     for link in link_list:
         for lang in lang_names:
             pageviews.append(get_second_element_by_key(page_view[lang], link))
-            metrics.append(max(lang_dict[lang][link][kk]))
+            metrics.append(max(lang_dict[lang][link]))
             langs.append(lang)
 
-    #print(pageviews)
-    #print(metrics)
+        #print(pageviews)
+        #print(metrics)
     print(len(pageviews), len(metrics), len(langs))
-
-    plot_metric_vs_page_views(pageviews, metrics, langs, ["zh", "ro", "en", "ru", "es", "sv"], key_list[kk])
+    plot_metric_vs_page_views(pageviews, metrics, langs, ["fa", "zh", "ro", "en", "ru", "es", "sv"], metric)
+    plot_metric_vs_page_views(pageviews, metrics, langs, ["en", "zh", 'sv'], metric+"en-zh-sv")

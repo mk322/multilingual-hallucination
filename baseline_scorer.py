@@ -25,18 +25,19 @@ def bleu_scorer(pred, target):
 
     return bleu_score(pred, [target]).item()
 
-def rouge_score(preds, target):
+def rouge_score(preds, target, metric):
     rouge = ROUGEScore(use_stemmer=True)
 
-    dic = rouge(preds, target)
+    dic = rouge(preds, target)[metric]
 
-    ret_list = []
-    ret_str = ""
-    for key in key_list:
-        num = dic[key].item()
-        ret_list.append(num)
-        ret_str += str(num) + "\t"
-    return ret_str[:-1]
+    ret_str = str(dic.item())
+    #ret_list = []
+    #ret_str = ""
+    #for key in key_list:
+        #num = dic[key].item()
+        #ret_list.append(num)
+        #ret_str += str(num) + "\t"
+    return ret_str
 
 # Function to compute unigram overlap
 def unigram_overlap(reference_text, source_text, lang):
@@ -57,31 +58,36 @@ def unigram_overlap(reference_text, source_text, lang):
     return overlap
 
 
-refer_path = "result/wiki_check/Human_wiki_summary.txt"
+refer_path = "result/wiki_check/Human_wiki_full.txt"
 source_path = "result/Human_generation_bloomz-mt_non-en.txt"
 
 with open(source_path,"r", encoding="utf-8",) as f:
     list_lines = f.read().splitlines()
 
-with open(refer_path,"r", encoding="utf-8",) as f:
+with open(refer_path,"r") as f:
     refer_lines = f.read().splitlines()
     refer_dic = {}
-    for line in refer_lines:
-        parts = line.split("\t")
-        link = parts[0]
-        lang = parts[1]
-        text = parts[2]
-        refer_dic[(link, lang)] = text
+    print(len(refer_lines))
 
-with open("result/scores/Unigram_Human_bloomz-mt_non-en.txt", "w", buffering=1) as f:
-    for i in range(0, len(list_lines), 5):
-        link, lang, term, num, text = list_lines[i].split("\t")
-        sentences = [list_lines[i+j].split("\t")[-1] for j in range(5)]
-        refer_text = refer_dic[(link, lang)]
-        for k in range(5):
-            source_sent = sentences[k]
-            #ret_str = bleu_score(source_sent, split_into_sentences(refer_text.replace("///n", "\n")))
-            ret_str = unigram_overlap(source_sent, refer_text.replace("///n", "\n"), get_language_name(lang))
-            #result_str = "\t".join(result_dic[key] for key in key_list)
-            print(f"{link}\t{lang}\t{k}\t{ret_str}", file=f)
+    for i in range(len(refer_lines)):
+        line = refer_lines[i]
+        if len(line) > 0:
+            parts = line.split("\t")
+            link = parts[0]
+            lang = parts[1]
+            text = parts[3]
+        
+            refer_dic[(link, lang)] = text
+
+for name in ["rouge2", "rougeL", "rougeLsum"]:
+    with open(f"result/scores/{name}_Human_bloomz-mt_non-en_full.txt", "a", buffering=1) as f:
+        for i in range(0, len(list_lines), 5):
+            link, lang, term, num, text = list_lines[i].split("\t")
+            sentences = [list_lines[i+j].split("\t")[-1] for j in range(5)]
+            refer_text = refer_dic[(link, lang)]
+            for k in range(5):
+                source_sent = sentences[k]
+                ret_str = rouge_score(source_sent, refer_text, f"{name}_fmeasure")
+
+                print(f"{link}\t{lang}\t{k}\t{ret_str}", file=f)
             #text = max(sentences, key=len)
