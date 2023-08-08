@@ -1,8 +1,9 @@
 
-#metric_list = ["rouge1", "rouge2", "rougeL", "rougeLsum", "Unigram"]
-metric_list = ["Unigram", "BLEU"]
+metric_list = ["rouge1", "rouge2", "rougeL", "rougeLsum", "Unigram"]
+#metric_list = ["Unigram"]
 
 for metric in metric_list:
+    #metric += "_union"
     path = f"result/scores/{metric}_Human_bloomz-mt_non-en.txt"
 
     with open(path, "r") as f:
@@ -13,7 +14,7 @@ for metric in metric_list:
     for line in txt[1:]:
         parts = line.split("\t")
         lang = parts[1]
-        score = parts[3]
+        score = parts[-1]
         if lang not in lang_dict:
             lang_dict[lang] = []
 

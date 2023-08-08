@@ -77,3 +77,4 @@ data/x-fact/label_maps/teyit.org.txt
 data/x-fact/label_maps/youturn.in.txt
 __pycache__/decompose_facts.cpython-38.pyc
 __pycache__/model_utils.cpython-38.pyc
+result/wiki_check/Human_wiki_full.txt

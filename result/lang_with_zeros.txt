@@ -1,0 +1,8 @@
+zh
+ru
+uk
+fa
+th
+ja
+hu
+bg
