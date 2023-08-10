@@ -196,7 +196,7 @@ for term_link in term_dict:
         prompt_list.append(prompt)
 
 with open(f"result/{category}_generation_bloom_{suffix}.txt", "a", buffering=1) as f:
-    for i in range(4057, len(prompt_list), args.batch_size):
+    for i in range(10327, len(prompt_list), args.batch_size):
         inputs = prompt_list[i : i+args.batch_size]
     #if not os.path.exists(f'data/scores_{args.model_name}_{args.model_size}'):
         #os.makedirs(f'data/scores_{args.model_name}_{args.model_size}')
